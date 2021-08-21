@@ -22,6 +22,20 @@ public class ListarTarefas {
     }
   }
 
+  public void remover(Tarefa tarefa) {
+    this.tarefas.remove(tarefa);
+  }
+
+  public Tarefa buscar(String descricao) {
+    for (Tarefa tarefa : tarefas) {
+      if (descricao.equals(tarefa.descricao)) {
+        return tarefa;
+      }
+    }
+    System.out.println("Tarefa não encontrada");
+    return null;
+  }
+
   public void exibirTarefas() {
     for (Tarefa tarefa : tarefas) {
       tarefa.exibirTarefa();
