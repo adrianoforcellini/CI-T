@@ -1,4 +1,4 @@
-public class Kata {
+public class Feast {
 
   public static boolean feast(String beast, String dish) {
     if (
