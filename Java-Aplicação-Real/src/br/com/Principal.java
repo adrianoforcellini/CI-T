@@ -9,6 +9,7 @@ public class Principal {
     Tarefa tarefa1 = new Tarefa("Aproveitar o fim de semana estedido pra ver todo o módulo de Java ");
     Tarefa tarefa2 = new Tarefa("Criar a versão 2.0 do PJ webchat, que aquela bagunça dá não =P ");
     Tarefa tarefa3 = new Tarefa("Amar as pessoas como se não houvesse amanhã. ");
+    Tarefa tarefa4 = new Tarefa("Desistir");
 
     tarefa1.exibirTarefa();
     System.out.println("A tarefa tem " + tarefa1.obterTamanhoTarefa() + " caracteres");
@@ -30,7 +31,20 @@ public class Principal {
     tarefas2.adicionar(tarefa1);
     tarefas2.adicionar(tarefa2);
     tarefas2.adicionar(tarefa3);
+    tarefas2.adicionar(tarefa4);
+    tarefas2.exibirTarefas();
+
+    System.out.println("-------------------------------------------------------------");
+    System.out.println("Minha tarefas após remover:");
+    System.out.println("Removendo posição que não existe : Posição 3 ( não adicionada por ser inválida)");
+    tarefas2.remover(3);
+    System.out.println("---------------------------------------------");
+    System.out.println("Removendo posição 2 e exibindo:");
+    tarefas2.remover(2);
+    tarefas2.exibirTarefas();
+    System.out.println("---------------------------------------------");
+    System.out.println("Readicionando, afinal é preciso:");
+    tarefas2.adicionar(tarefa3);
     tarefas2.exibirTarefas();
   }
-
 }

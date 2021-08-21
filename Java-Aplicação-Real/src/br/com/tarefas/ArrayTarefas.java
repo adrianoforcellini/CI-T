@@ -19,7 +19,9 @@ public class ArrayTarefas {
 
   public void exibirTarefas() {
     for (Tarefa tarefa : tarefas) {
-      tarefa.exibirTarefa();
+      if (tarefas != null) {
+        tarefa.exibirTarefa();
+      }
     }
   }
 }
