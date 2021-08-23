@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class ArrayList {
+public class ArrayListExplore {
 
   public static void main(String[] args) {
     Scanner ler = new Scanner(System.in);
