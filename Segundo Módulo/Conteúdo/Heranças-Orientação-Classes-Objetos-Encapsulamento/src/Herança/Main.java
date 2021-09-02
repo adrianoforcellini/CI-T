@@ -9,4 +9,5 @@ public class Main {
         System.out.println("CPF: " + i.cpf);
         System.out.println("Data de nascimento: " + i.data_nascimento.toString());
     }
+
 }

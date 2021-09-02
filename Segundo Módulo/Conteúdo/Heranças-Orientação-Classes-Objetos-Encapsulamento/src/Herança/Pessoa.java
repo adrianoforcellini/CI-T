@@ -11,6 +11,7 @@ public class Pessoa {
         this.cpf = _cpf;
         this.data_nascimento = _data;
     }
+    // ao adicionar final double, qualquer outra classe estaria proibida de sobreescrever tirarCopias
     public double tirarCopias(int qtd) { //Retorna o preço para tirar copias
         return 0.10 * (double) qtd;
     }
