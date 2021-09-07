@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 /**
  * Classe Java (client) para Comunicação com servidor NodeJS
@@ -48,8 +49,11 @@ public class NodeJsEcho {
                     (new InputStreamReader(getSocket().getInputStream()));
 
             // escreve str no socket e lêr
-            out.println("!");
-            String retorno = in.readLine();
+            out.println(message);
+            String chegada = in.readLine();
+            String [] textArray = chegada.split("!");
+//            System.out.println(textArray[0]);
+            String retorno = textArray[0];
             return retorno;
 
         } catch (IOException e) {

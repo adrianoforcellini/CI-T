@@ -11,9 +11,11 @@ net.createServer(function(sock) {
 
     // Adiciona um 'data' - "event handler" nesta instância do socket
     sock.on('data', function(data) {
+
         // dados foram recebidos no socket
         // Escreve a mensagem recebida de volta para o socket (echo)
-        sock.write(`Oláá, Javaaa!!!${data}`);
+        console.log(data.toString())
+        sock.write(`Oláá,Javaaa!${data}`);
     });
 
     // Adiciona um 'close' - "event handler" nesta instância do socket
