@@ -1,0 +1,16 @@
+{
+  "name": "nodejs.socketio.java",
+  "version": "1.0.0",
+  "description": "## Nesse projeto, teremos uma apliação simples onde o client será em Java,  ## o server em Node.JS , e a comunicação via Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "net": "^1.0.2",
+    "nodemon": "^2.0.12"
+  }
+}
