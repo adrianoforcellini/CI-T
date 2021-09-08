@@ -1,4 +1,5 @@
 const net = require('net');
+const readline = require('readline-sync');
 
 const HOST = '127.0.0.1'; // parametrizar o IP do Listen
 const PORT = 6969; // porta TCP LISTEN
@@ -11,11 +12,14 @@ net.createServer(function(sock) {
 
     // Adiciona um 'data' - "event handler" nesta instância do socket
     sock.on('data', function(data) {
-
+        // console.log(data, 'como a informação chega')
         // dados foram recebidos no socket
         // Escreve a mensagem recebida de volta para o socket (echo)
         console.log(data.toString())
-        sock.write(`Oláá,Javaaa!${data}`);
+       let resposta = readline.question('Resposta:')
+
+
+        sock.write(`${resposta}#${data}`);
     });
 
     // Adiciona um 'close' - "event handler" nesta instância do socket

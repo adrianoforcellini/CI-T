@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Classe Java (client) para Comunicação com servidor NodeJS
@@ -27,8 +28,14 @@ public class NodeJsEcho {
         client.socketConnect(ip, port);
 
         // escreve e recebe mensagem
-        String message = "Olá Node!!!!";
+        String message = "";
 
+        Scanner scan = new Scanner(System.in);
+        BufferedReader obj;
+//        message = obj.readLine();
+
+        System.out.printf("Digite sua mensagem:");
+        message = scan.nextLine();
         System.out.println("Enviando: " + message);
         String retorno = client.echo(message);
         System.out.println("Recebendo: " + retorno);
@@ -51,7 +58,7 @@ public class NodeJsEcho {
             // escreve str no socket e lêr
             out.println(message);
             String chegada = in.readLine();
-            String [] textArray = chegada.split("!");
+            String [] textArray = chegada.split("#");
 //            System.out.println(textArray[0]);
             String retorno = textArray[0];
             return retorno;
