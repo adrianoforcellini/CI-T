@@ -4,15 +4,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * Classe Java (client) para Comunicação com servidor NodeJS
- * Escreve e recebe um simples "echo" -> "mensagem123"
- * by Douglas.Pasqua
- * http://douglaspasqua.com
- */
 public class NodeJsEcho {
     // objeto socket
     private Socket socket = null;
@@ -31,8 +24,6 @@ public class NodeJsEcho {
         String message = "";
 
         Scanner scan = new Scanner(System.in);
-        BufferedReader obj;
-//        message = obj.readLine();
 
         System.out.printf("Digite sua mensagem:");
         message = scan.nextLine();
@@ -55,13 +46,19 @@ public class NodeJsEcho {
             BufferedReader in = new BufferedReader
                     (new InputStreamReader(getSocket().getInputStream()));
 
+            // Sem buffer, cada invocação de read () ou readLine () pode fazer com que os bytes sejam
+            // lidos do arquivo, convertidos em caracteres e depois retornados, o que pode ser muito ineficiente.
+
+
             // escreve str no socket e lêr
             out.println(message);
             String chegada = in.readLine();
             String [] textArray = chegada.split("#");
-//            System.out.println(textArray[0]);
+            System.out.println(textArray[0]);
             String retorno = textArray[0];
             return retorno;
+//            return chegada;
+
 
         } catch (IOException e) {
             e.printStackTrace();
